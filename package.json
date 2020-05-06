@@ -28,5 +28,9 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "scripts": {
+    "nuke": "rm -rf node_modules/*",
+    "postinstall": "lerna run prepublish"
   }
 }
