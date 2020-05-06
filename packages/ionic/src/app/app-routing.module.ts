@@ -12,6 +12,13 @@ const routes: Routes = [
     redirectTo: "home",
     pathMatch: "full",
   },
+  {
+    path: "desktop",
+    loadChildren: () =>
+      import("./layouts/desktop/desktop.module").then(
+        (m) => m.DesktopPageModule
+      ),
+  },
 ];
 
 @NgModule({
