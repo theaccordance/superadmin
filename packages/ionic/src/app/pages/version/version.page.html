@@ -1,9 +1,24 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>version</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Version Info</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngIf="$manifest | async as manifest">
+    <ion-list-header color="light">Application</ion-list-header>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-note>{{manifest.name}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Version</ion-label>
+      <ion-note>{{manifest.version}}</ion-note>
+    </ion-item>
+    <ion-list-header color="light">Dependencies</ion-list-header>
+    <ion-item *ngFor="let dep of manifest.dependencies | keyvalue">
+      <ion-label>{{dep.key}}</ion-label>
+      <ion-note>{{dep.value}}</ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
