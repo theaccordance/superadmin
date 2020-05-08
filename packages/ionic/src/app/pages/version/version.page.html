@@ -11,7 +11,7 @@
       <ion-label>Name</ion-label>
       <ion-note>{{vm.applicationConfiguration.name}}</ion-note>
     </ion-item>
-    <ion-list-divider color="light">Dependencies</ion-list-divider>
+    <ion-item-divider color="light">Dependencies</ion-item-divider>
     <ion-item *ngFor="let dep of vm.applicationConfiguration.dependencies | keyvalue">
       <ion-label>{{dep.key}}</ion-label>
       <ion-note>{{dep.value}}</ion-note>
@@ -22,7 +22,7 @@
         <ion-label>Name</ion-label>
         <ion-note>{{vm.serverConfiguration.name}}</ion-note>
       </ion-item>
-      <ion-list-divider color="light">Dependencies</ion-list-divider>
+      <ion-item-divider color="light">Dependencies</ion-item-divider>
       <ion-item *ngFor="let dep of vm.serverConfiguration.dependencies | keyvalue">
         <ion-label>{{dep.key}}</ion-label>
         <ion-note>{{dep.value}}</ion-note>
