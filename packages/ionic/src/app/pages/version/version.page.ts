@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { RootState } from "../../ngrx/state";
+import { RootState } from "../../store/state";
 import { Store } from "@ngrx/store";
 import {
   ApplicationConfiguration,
   ServerConfiguration,
-} from "../../ngrx/ionic/ionic.model";
-import { GetServerConfiguration } from "../../ngrx/ionic/ionic.actions";
+} from "../../store/ionic/ionic.model";
+import { GetServerConfiguration } from "../../store/ionic/ionic.actions";
 
 interface VersionViewModel {
   applicationConfiguration: ApplicationConfiguration;
