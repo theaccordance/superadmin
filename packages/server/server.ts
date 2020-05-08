@@ -3,6 +3,7 @@ import { registerURIs } from "express-well-known";
 import { serverConfig } from "./config";
 import { name, dependencies, devDependencies } from "./package.json";
 import { project } from "./git";
+import { rootLevelMiddleware } from "./middleware";
 const configMap = JSON.parse(serverConfig.toString());
 
 const wellKnownURIs = registerURIs({
@@ -18,6 +19,7 @@ const wellKnownURIs = registerURIs({
 });
 
 export async function mountRoutes(app: Application = express()) {
+  app.use(rootLevelMiddleware);
   app.use(wellKnownURIs);
   return app;
 }
