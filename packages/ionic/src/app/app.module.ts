@@ -11,6 +11,7 @@ import { AppRoutingModule } from "./app-routing.module";
 
 import { StoreModule } from "@ngrx/store";
 import StoreReducers from "../ngrx/reducers";
+import { ApiService } from "./services/api.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import StoreReducers from "../ngrx/reducers";
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ApiService,
   ],
   bootstrap: [AppComponent],
 })
