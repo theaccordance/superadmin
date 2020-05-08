@@ -6,16 +6,27 @@
 
 <ion-content>
   <ion-list *ngIf="$viewModel | async as vm">
-    <ion-list-header color="light">Application</ion-list-header>
+    <ion-list-header color="primary">Application</ion-list-header>
     <ion-item>
       <ion-label>Name</ion-label>
       <ion-note>{{vm.applicationConfiguration.name}}</ion-note>
     </ion-item>
-    <ion-list-header color="light">Dependencies</ion-list-header>
+    <ion-list-divider color="light">Dependencies</ion-list-divider>
     <ion-item *ngFor="let dep of vm.applicationConfiguration.dependencies | keyvalue">
       <ion-label>{{dep.key}}</ion-label>
       <ion-note>{{dep.value}}</ion-note>
     </ion-item>
-    <ion-list-header>Server</ion-list-header>
+    <div *ngIf="vm.serverConfiguration">
+      <ion-list-header color="primary">Server</ion-list-header>
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-note>{{vm.serverConfiguration.name}}</ion-note>
+      </ion-item>
+      <ion-list-divider color="light">Dependencies</ion-list-divider>
+      <ion-item *ngFor="let dep of vm.serverConfiguration.dependencies | keyvalue">
+        <ion-label>{{dep.key}}</ion-label>
+        <ion-note>{{dep.value}}</ion-note>
+      </ion-item>
+    </div>
   </ion-list>
 </ion-content>

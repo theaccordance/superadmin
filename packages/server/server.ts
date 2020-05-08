@@ -11,8 +11,8 @@ const rootPath = "../..";
 const project = {
   branch: git.branch(rootPath),
   date: git.date(rootPath).toString(),
-  message: git.message(rootPath),
   long: git.long(rootPath),
+  message: git.message(rootPath),
   short: git.short(rootPath),
 };
 

@@ -5,6 +5,10 @@ import {
   devDependencies,
 } from "../../../package.json";
 
+interface ManifestMapping {
+  [key: string]: string;
+}
+
 export interface Toast {
   message: string;
   duration?: number;
@@ -28,9 +32,7 @@ export interface FeatureFlag {
 
 export interface ApplicationConfiguration {
   name: string;
-  dependencies: {
-    [key: string]: string;
-  };
+  dependencies: ManifestMapping;
 }
 
 const applicationConfiguration: ApplicationConfiguration = {
@@ -41,8 +43,22 @@ const applicationConfiguration: ApplicationConfiguration = {
   },
 };
 
+export interface ServerConfiguration {
+  name: string;
+  configMap: ManifestMapping;
+  dependencies: ManifestMapping;
+  project: {
+    branch: string;
+    date: string;
+    long: string;
+    message: string;
+    short: string;
+  };
+}
+
 export interface IonicState {
   applicationConfiguration: ApplicationConfiguration;
+  serverConfiguration?: ServerConfiguration;
 }
 
 export const DEFAULT_IONIC_STATE: IonicState = {
