@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { FeatureFlag } from "../../../ngrx/ionic/ionic.model";
 
 interface EnvironmentListItem {
   name: string;

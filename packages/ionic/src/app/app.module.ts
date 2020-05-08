@@ -10,7 +10,7 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { StoreModule } from "@ngrx/store";
-import StoreReducers from "../ngrx/reducers";
+import StoreReducers from "./ngrx/reducers";
 import { ApiService } from "./services/api.service";
 
 @NgModule({

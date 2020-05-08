@@ -3,7 +3,7 @@ import {
   version,
   dependencies,
   devDependencies,
-} from "../../../package.json";
+} from "../../../../package.json";
 
 interface ManifestMapping {
   [key: string]: string;
