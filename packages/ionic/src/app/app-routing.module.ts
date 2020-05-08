@@ -14,6 +14,11 @@ const routes: Routes = [
         (m) => m.DesktopPageModule
       ),
   },
+  {
+    path: "public",
+    loadChildren: () =>
+      import("./layouts/public/public.module").then((m) => m.PublicPageModule),
+  },
 ];
 
 @NgModule({
