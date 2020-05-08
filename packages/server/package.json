@@ -8,6 +8,7 @@
     "convict": "^5.2.0",
     "express": "^4.17.1",
     "express-well-known": "^1.0.1",
+    "git-rev-sync": "^2.0.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {

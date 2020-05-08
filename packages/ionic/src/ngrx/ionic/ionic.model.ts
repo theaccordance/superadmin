@@ -33,8 +33,6 @@ export interface ApplicationConfiguration {
   };
 }
 
-const projectRootPath = "../../../../../";
-
 const applicationConfiguration: ApplicationConfiguration = {
   name,
   dependencies: {
