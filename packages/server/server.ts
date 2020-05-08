@@ -1,11 +1,19 @@
 import express, { Application } from "express";
 import { registerURIs } from "express-well-known";
 import { serverConfig } from "./config";
+import { name, dependencies, devDependencies } from "./package.json";
 
-const resource = serverConfig.toString();
+const configMap = JSON.parse(serverConfig.toString());
 
 const wellKnownURIs = registerURIs({
-  "server-configuration": JSON.parse(resource),
+  "server-configuration": {
+    name,
+    configMap,
+    dependencies: {
+      ...dependencies,
+      ...devDependencies,
+    },
+  },
 });
 
 export async function mountRoutes(app: Application = express()) {

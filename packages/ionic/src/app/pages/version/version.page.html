@@ -5,20 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf="$manifest | async as manifest">
+  <ion-list *ngIf="$viewModel | async as vm">
     <ion-list-header color="light">Application</ion-list-header>
     <ion-item>
       <ion-label>Name</ion-label>
-      <ion-note>{{manifest.name}}</ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Version</ion-label>
-      <ion-note>{{manifest.version}}</ion-note>
+      <ion-note>{{vm.applicationConfiguration.name}}</ion-note>
     </ion-item>
     <ion-list-header color="light">Dependencies</ion-list-header>
-    <ion-item *ngFor="let dep of manifest.dependencies | keyvalue">
+    <ion-item *ngFor="let dep of vm.applicationConfiguration.dependencies | keyvalue">
       <ion-label>{{dep.key}}</ion-label>
       <ion-note>{{dep.value}}</ion-note>
     </ion-item>
+    <ion-list-header>Server</ion-list-header>
   </ion-list>
 </ion-content>

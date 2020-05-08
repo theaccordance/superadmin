@@ -2,7 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { RootState } from "../../../ngrx/state";
 import { Store } from "@ngrx/store";
-import { Manifest } from "../../../ngrx/ionic/ionic.model";
+import { ApplicationConfiguration } from "../../../ngrx/ionic/ionic.model";
+
+interface VersionViewModel {
+  applicationConfiguration: ApplicationConfiguration;
+}
 
 @Component({
   selector: "app-version",
@@ -10,9 +14,12 @@ import { Manifest } from "../../../ngrx/ionic/ionic.model";
   styleUrls: ["./version.page.scss"],
 })
 export class VersionPage implements OnInit {
-  $manifest: Observable<Manifest>;
+  $viewModel: Observable<VersionViewModel>;
   constructor(private store: Store<RootState>) {
-    this.$manifest = this.store.select((store) => store.ionic.manifest);
+    this.$viewModel = this.store.select((store) => {
+      const { applicationConfiguration } = store.ionic;
+      return { applicationConfiguration };
+    });
   }
 
   ngOnInit() {}

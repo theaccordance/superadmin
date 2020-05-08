@@ -26,15 +26,8 @@ export interface FeatureFlag {
   url: string;
 }
 
-export interface Manifest {
+export interface ApplicationConfiguration {
   name: string;
-  version: string;
-  git?: {
-    branch: string;
-    date: string;
-    long: string;
-    short: string;
-  };
   dependencies: {
     [key: string]: string;
   };
@@ -42,9 +35,8 @@ export interface Manifest {
 
 const projectRootPath = "../../../../../";
 
-const manifest: Manifest = {
+const applicationConfiguration: ApplicationConfiguration = {
   name,
-  version,
   dependencies: {
     ...dependencies,
     ...devDependencies,
@@ -52,9 +44,9 @@ const manifest: Manifest = {
 };
 
 export interface IonicState {
-  manifest: Manifest;
+  applicationConfiguration: ApplicationConfiguration;
 }
 
 export const DEFAULT_IONIC_STATE: IonicState = {
-  manifest,
+  applicationConfiguration,
 };
