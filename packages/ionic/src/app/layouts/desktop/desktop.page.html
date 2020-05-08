@@ -8,11 +8,22 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle auto-hide="false">
+          <ion-list-header color="primary">Features</ion-list-header>
           <ion-item button *ngFor="let feature of features" routerLink="{{feature.url}}">
             <ion-icon slot="start" [name]='feature.icon'></ion-icon>
             <ion-label>
               {{feature.label}}
             </ion-label>
+          </ion-item>
+          <ion-list-header color="primary">Environments</ion-list-header>
+          <ion-item *ngFor="let env of environments" button routerLink="/desktop/environment/detail">
+            <ion-icon name="radio-button-on" [color]="env.status" slot="start"></ion-icon>
+            <ion-label>{{env.name}}</ion-label>
+          </ion-item>
+          <ion-list-header color="primary">Help</ion-list-header>
+          <ion-item *ngFor="let item of help" button [routerLink]="item.url">
+            <ion-icon [name]="item.icon" slot="start"></ion-icon>
+            <ion-label>{{item.label}}</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>

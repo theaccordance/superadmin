@@ -9,31 +9,21 @@ const routes: Routes = [
     component: DesktopPage,
     children: [
       {
-        path: "environments",
-        loadChildren: () =>
-          import("../../pages/environments-list/environments-list.module").then(
-            (m) => m.EnvironmentsListPageModule
-          ),
+        path: "",
+        redirectTo: "version",
       },
       {
-        path: "environments/detail",
+        path: "environment/detail",
         loadChildren: () =>
           import(
-            "../../pages/environments-detail/environments-detail.module"
-          ).then((m) => m.EnvironmentsDetailPageModule),
+            "../../pages/environment-detail/environment-detail.module"
+          ).then((m) => m.EnvironmentDetailPageModule),
       },
       {
         path: "version",
         loadChildren: () =>
           import("../../pages/version/version.module").then(
             (m) => m.VersionPageModule
-          ),
-      },
-      {
-        path: "jobs",
-        loadChildren: () =>
-          import("../../pages/jobs-list/jobs-list.module").then(
-            (m) => m.JobsListPageModule
           ),
       },
     ],
