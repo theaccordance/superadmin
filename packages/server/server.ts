@@ -2,19 +2,8 @@ import express, { Application } from "express";
 import { registerURIs } from "express-well-known";
 import { serverConfig } from "./config";
 import { name, dependencies, devDependencies } from "./package.json";
-import git from "git-rev-sync";
-
+import { project } from "./git";
 const configMap = JSON.parse(serverConfig.toString());
-
-const rootPath = "../..";
-
-const project = {
-  branch: git.branch(rootPath),
-  date: git.date(rootPath).toString(),
-  long: git.long(rootPath),
-  message: git.message(rootPath),
-  short: git.short(rootPath),
-};
 
 const wellKnownURIs = registerURIs({
   "server-configuration": {
