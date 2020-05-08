@@ -17,6 +17,7 @@ import { environment } from "../environments/environment";
 import { EffectsModule } from "@ngrx/effects";
 import StoreEffects from "./store/effects";
 import { HttpClientModule } from "@angular/common/http";
+import { OKTA_CONFIG, OktaAuthModule } from "@okta/okta-angular";
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { HttpClientModule } from "@angular/common/http";
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    OktaAuthModule,
     StoreModule.forRoot(StoreReducers),
     EffectsModule.forRoot(StoreEffects),
     StoreDevtoolsModule.instrument({
@@ -37,6 +39,7 @@ import { HttpClientModule } from "@angular/common/http";
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: OKTA_CONFIG, useValue: environment.auth },
     ApiService,
   ],
   bootstrap: [AppComponent],
