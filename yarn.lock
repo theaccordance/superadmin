@@ -1810,6 +1810,11 @@
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-9.1.2.tgz#9d81f05b6ba3eb42a911d20f35d2112af3adbfd8"
   integrity sha512-H9jbGUzP5izk9Ap8BQJicO1+xheyDyHBbvv6b1NkaRHpDizhPOSBjoFWExFfsejXo0dafaIsu6aI+y+Fp+LSsg==
 
+"@ngrx/store-devtools@^9.1.2":
+  version "9.1.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-9.1.2.tgz#b10bbde90acce2ab65f3d648051239cdd261049e"
+  integrity sha512-i9gwj9FlUVrei9yMwwFx15RV0JWOI73cjbjKhZ2lUWmCF6bfZeuPYZmEs3/80L8r3R9nZWnBoX9xxQslte65iw==
+
 "@ngrx/store@^9.1.2":
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-9.1.2.tgz#cc443d08d53440cafd669048a974b05456e95070"
@@ -1982,7 +1987,7 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/body-parser@*":
+"@types/body-parser@*", "@types/body-parser@^1.19.0":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.0.tgz#0685b3c47eb3006ffed117cdd55164b61f80538f"
   integrity sha512-W98JrE0j2K78swW4ukqMleo8R7h/pFETjM2DQ90MF6XK2i4LO4W3gQ71Lt4w3bfm2EvVSyWHplECvB5sK22yFQ==
@@ -2030,6 +2035,11 @@
     "@types/express-serve-static-core" "*"
     "@types/qs" "*"
     "@types/serve-static" "*"
+
+"@types/git-rev-sync@^1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@types/git-rev-sync/-/git-rev-sync-1.12.0.tgz#b2281e3a370a0da2a13dfd19524d063e7022d2c5"
+  integrity sha512-JiYuezujtbA9dcyQKp8BdzEB3V4/9B9/CSyZrxP+S07xXXCBPEFScyXQPhz3Li+Ai9SV1DJE1hxRNU9nAxxtjQ==
 
 "@types/glob@^7.1.1":
   version "7.1.1"
@@ -2861,7 +2871,7 @@ bn.js@^5.1.1:
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.1.1.tgz#48efc4031a9c4041b9c99c6941d903463ab62eb5"
   integrity sha512-IUTD/REb78Z2eodka1QZyyEk66pciRcP6Sroka0aI3tG/iwIdYLrBD62RsubR7vqdt3WyX8p4jxeatzmRSphtA==
 
-body-parser@1.19.0, body-parser@^1.16.1:
+body-parser@1.19.0, body-parser@^1.16.1, body-parser@^1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
