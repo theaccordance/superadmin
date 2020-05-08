@@ -9,7 +9,7 @@
     <ion-list-header color="primary">Application</ion-list-header>
     <ion-item>
       <ion-label>Name</ion-label>
-      <ion-note>{{vm.applicationConfiguration.name}}</ion-note>
+      <ion-note slot="end">{{vm.applicationConfiguration.name}}</ion-note>
     </ion-item>
     <ion-item-divider color="light">Dependencies</ion-item-divider>
     <ion-item *ngFor="let dep of vm.applicationConfiguration.dependencies | keyvalue">
@@ -20,10 +20,32 @@
       <ion-list-header color="primary">Server</ion-list-header>
       <ion-item>
         <ion-label>Name</ion-label>
-        <ion-note>{{vm.serverConfiguration.name}}</ion-note>
+        <ion-note slot="end">{{vm.serverConfiguration.name}}</ion-note>
+      </ion-item>
+      <ion-item-divider color="light">Git State</ion-item-divider>
+      <ion-item>
+        <ion-label>Branch</ion-label>
+        <ion-note slot="end">{{vm.serverConfiguration.project.branch}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Commit</ion-label>
+        <ion-note slot="end">{{vm.serverConfiguration.project.long}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-note slot="end">{{vm.serverConfiguration.project.date}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Message</ion-label>
+        <ion-note slot="end">{{vm.serverConfiguration.project.message}}</ion-note>
       </ion-item>
       <ion-item-divider color="light">Dependencies</ion-item-divider>
       <ion-item *ngFor="let dep of vm.serverConfiguration.dependencies | keyvalue">
+        <ion-label>{{dep.key}}</ion-label>
+        <ion-note>{{dep.value}}</ion-note>
+      </ion-item>
+      <ion-item-divider color="light">Configuration Map</ion-item-divider>
+      <ion-item *ngFor="let dep of vm.serverConfiguration.configMap | keyvalue">
         <ion-label>{{dep.key}}</ion-label>
         <ion-note>{{dep.value}}</ion-note>
       </ion-item>

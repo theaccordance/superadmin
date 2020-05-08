@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { ApiService } from "../../services/api.service";
 import { GetServerConfigurationResponse, IONIC_ACTIONS } from "./ionic.actions";
-import { mergeMap, map, catchError } from "rxjs/operators";
+import { mergeMap, map, catchError, switchMap } from "rxjs/operators";
 import { EMPTY, Observable } from "rxjs";
 import { ServerConfiguration } from "./ionic.model";
 

@@ -11,6 +11,6 @@ export class GetServerConfiguration implements Action {
 }
 
 export class GetServerConfigurationResponse implements Action {
-  readonly type = IONIC_ACTIONS.GetServerConfiguration;
+  readonly type = IONIC_ACTIONS.GetServerConfigurationResponse;
   constructor(public payload: ServerConfiguration = null) {}
 }

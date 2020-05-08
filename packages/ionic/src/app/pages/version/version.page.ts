@@ -28,6 +28,7 @@ export class VersionPage implements OnInit {
   }
 
   ngOnInit() {
+    console.log("ngOnInit");
     this.store.dispatch(new GetServerConfiguration());
   }
 }
