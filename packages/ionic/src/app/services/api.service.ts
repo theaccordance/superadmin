@@ -9,8 +9,8 @@ export class ApiService {
 
   public getServerConfiguration() {
     console.log("getServerConfiguration");
-    return this.http
-      .get("//localhost:8600/.well-known/server-configuration")
-      .subscribe((res: any) => res);
+    return this.http.get(
+      "http://localhost:8600/.well-known/server-configuration"
+    );
   }
 }
