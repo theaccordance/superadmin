@@ -59,6 +59,7 @@ export interface ServerConfiguration {
 export interface IonicState {
   applicationConfiguration: ApplicationConfiguration;
   serverConfiguration?: ServerConfiguration;
+  toaster?: Partial<Toast>;
 }
 
 export const DEFAULT_IONIC_STATE: IonicState = {
