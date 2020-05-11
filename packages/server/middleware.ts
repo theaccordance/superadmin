@@ -4,6 +4,7 @@ import cors from "cors";
 import compression from "compression";
 import morgan from "morgan";
 import { Request, Response, NextFunction } from "express";
+// @ts-ignore
 import OktaJwtVerifier from "@okta/jwt-verifier";
 
 const requestId = expressRequestId();
@@ -15,18 +16,24 @@ const oktaJwtVerifier = new OktaJwtVerifier({
 });
 
 export function oktaAuth(req: Request, res: Response, next: NextFunction) {
+  const expectedAudience = "api://default";
   const authHeader = req.headers.authorization || "";
   const match = authHeader.match(/Bearer (.+)/);
 
   if (!match) {
+    console.log("No match found for Auth Header");
     res.status(401);
     return next("Unauthorized");
   }
 
+  console.log(`oktaAuth: Bearer Token found`);
+
   const accessToken = match[1];
 
+  console.log(`Access Token: ${accessToken}`);
+
   return oktaJwtVerifier
-    .verifyAccessToken(accessToken)
+    .verifyAccessToken(accessToken, expectedAudience)
     .then((jwt) => {
       req.jwt = jwt;
       next();
