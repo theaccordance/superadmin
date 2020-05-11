@@ -14,7 +14,7 @@
     <ion-item-divider color="light">Dependencies</ion-item-divider>
     <ion-item *ngFor="let dep of vm.applicationConfiguration.dependencies | keyvalue">
       <ion-label>{{dep.key}}</ion-label>
-      <ion-note>{{dep.value}}</ion-note>
+      <ion-note slot="end">{{dep.value}}</ion-note>
     </ion-item>
     <div *ngIf="vm.serverConfiguration">
       <ion-list-header color="primary">Server</ion-list-header>
