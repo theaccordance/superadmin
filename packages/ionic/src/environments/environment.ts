@@ -7,7 +7,7 @@ export const environment = {
     issuer: "https://dev-550216.okta.com/oauth2/default",
     clientId: "0oablmo4pnCDgZbiT4x6",
     redirectUri: "http://localhost:4200/implicit/callback",
-    scope: "openid profile email".split(/\s+/),
+    scopes: ["openid", "profile", "email", "sudo"],
     pkce: true,
   },
   production: false,
