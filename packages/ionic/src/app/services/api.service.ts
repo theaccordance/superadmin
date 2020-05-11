@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { OktaAuthService } from "@okta/okta-angular";
 import { ServerConfiguration } from "../store/ionic/ionic.model";
 
@@ -7,13 +7,17 @@ import { ServerConfiguration } from "../store/ionic/ionic.model";
   providedIn: "root",
 })
 export class ApiService {
-  constructor(private http: HttpClient, private oktaAuth: OktaAuthService) {}
+  constructor(private http: HttpClient) {}
 
-  public async getServerConfiguration() {
-    console.log("getServerConfiguration");
-    const accessToken = await this.oktaAuth.getAccessToken();
+  public getServerConfiguration(accessToken: string) {
+    console.log(`AT: ${accessToken}`);
+    const headers = new HttpHeaders().set(
+      "Authorization",
+      ["Bearer", accessToken].join(" ")
+    );
     return this.http.get(
-      "http://localhost:8600/.well-known/server-configuration"
+      "http://localhost:8600/.well-known/server-configuration",
+      { headers }
     );
   }
 }
